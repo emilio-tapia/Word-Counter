@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="styles/light.css" id="theme">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn-mode" id="btn-mode"><i class="fa-solid fa-moon"></i></button>
+    <div class="container">
+        <div class="title-container">
+            <div class="title letter">
+                <h1>Word</h1>
+                <h1>Counter!</h1>
+            </div>
+            <div class="title glass">
+                <h1>Word</h1>
+                <h1>Counter!</h1>
+            </div>
+
+        </div>
+        <div class="counter-container glass">
+            <div class="input-container glass">
+                <input type="text" class="word " id="word" placeholder="Type here...">
+            </div>
+            <button class="btnShow glass" id="btnShow">
+                <i class="fa-solid fa-calculator"></i>
+            </button>
+            <div class="result-container glass">
+                <p>Length:</p>
+                <p class="result" id="result">0</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

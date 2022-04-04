@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+:root{
+    --primary-font: 'Staatliches'; 
+
+
+    --white:#fff;
+    --black:#000;
+    --primary-light: #f5f5f5;
+    --second-light:#f0f0f0;
+    --third-light:#DADBDB;
+
+    --primary-grey:#777;
+    --second-grey:#4f4f4f;
+    
+    --first-shadow: rgba(0,0,0,0.1);
+    --light-shadow: rgba(255,255,255,0.7);
+
+    --success: rgba(61, 168, 102, 0.6);
+    --error: rgba(160, 51, 39, 0.4);
+
+    --first-color:#4c8061;
+    --second-color: rgba(63, 50, 83, 0.5);
+}
+
+/* GLOBAL CONFIG RESET */
+* {
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    }
+    
+/* BODY DISPLAY */
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: var(--primary-font), sans-serif;
+    background-color: var(--primary-light);
+    background-image: linear-gradient(
+        350deg,
+        hsl(0deg 36% 50%) 0%,
+        hsl(1deg 38% 55%) 1%,
+        hsl(2deg 39% 60%) 4%,
+        hsl(2deg 41% 65%) 8%,
+        hsl(3deg 42% 70%) 13%,
+        hsl(3deg 44% 75%) 18%,
+        hsl(4deg 45% 80%) 26%,
+        hsl(4deg 47% 85%) 35%,
+        hsl(4deg 48% 90%) 47%,
+        hsl(4deg 50% 95%) 64%,
+        hsl(0deg 0% 100%) 100%
+    );
+
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+}
+
+button{
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.98);
+}
+
+input{
+    font-family: inherit;
+    /* color: transparent !important;
+    text-shadow: 0 0 0 var(--primary-light); */
+}
+
+input:focus{
+    outline: none;
+}
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+  cursor: none;
+}
+
+/* ****************** ******************* */
+
+.btn-mode{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    border: 2px solid transparent;
+    padding: 0.5rem;
+    background: transparent;
+}
+
+.btn-mode i{
+    font-size: 1.5rem;
+}
+
+.glass{
+    border-radius: .5em;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2.1px);
+    -webkit-backdrop-filter: blur(2.1px);
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    z-index: 2;
+}
+
+/* ****************** ******************* */
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+}
+
+.title{
+    left: 2vw;
+    height: 50%;
+    width: 40vw;
+    /* border: 1px solid var(--second-grey); */
+        display: flex;
+        justify-content: center;
+        align-content: center;
+}
+
+.title h1{
+    width: 100%;
+    margin-top: -25px;
+    padding: 0rem 1rem; 
+    font-size: 7rem;
+    align-self: center;
+    transform:
+    /* rotateX(90deg) */
+    rotateY(0deg)
+    rotateZ(0deg);
+  transform-style: preserve-3d;
+}
+
+.counter-container {
+    display: flex;
+    width: 100vh;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 1rem 2rem;
+}
+
+
+
+.input-container,
+.result-container{
+    margin: 1rem 2rem;
+    height: 20vh;
+    border: 0;
+    border-bottom: 4px solid var(--first-shadow);
+    border-radius: 20px;
+    text-align: center;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative;
+    align-content: space-between;
+
+}
+
+.input-container input{
+    width: 90%;
+    font-size: 2.5rem;
+    border: 0;
+    background-color: transparent;
+    border-bottom: 2px solid var(--black);
+}
+
+.result-container p{
+    font-size: 3.5rem;
+    display: inline-block;
+    margin: 0;
+    border-bottom: 2px solid var(--black);
+    margin-right: 20px;
+}
+
+.result-container p:nth-of-type(1){
+    color: var(--second-grey);
+    font-size: 1.5rem;
+    border: 0;
+    left: 0px;
+    margin-right: 20px;
+}
+
+.btnShow{
+    align-self: center;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    /* border: 1px solid var(--first-shadow); */
+    border: none;
+    background-color: var(--first-shadow);
+    border-bottom: 4px solid var(--first-shadow);
+    margin: -2rem 0px;
+    z-index: -1;
+    perspective: 1000px;
+    transform: rotate3d(90deg);
+}
+
+.btnShow i{
+    text-shadow: 0px 0px 1px var(--primary-grey);
+    color: transparent;
+    -webkit-text-stroke: 1px var(--first-shadow);
+    filter: contrast(30);
+    opacity: 0.5;
+    mix-blend-mode:darken;
+    font-size: 2rem;
+}
+
+.btnShow {
+display: block;
+margin: 0 auto;
+perspective: 300px;
+width: 75px;
+}
+
+.title{
+        position: relative;
+        background-color: transparent;
+        border-radius: 32px;
+        transition:
+          .4s ease-in-out transform,
+          .4s ease-in-out box-shadow;
+          transform:
+          rotateX(-30deg)
+          rotateY(-2.5deg)
+          rotateZ(-10deg);
+        transform-style: preserve-3d;
+
+          border-radius: .5em;
+          background-color: rgba(0, 0, 0, 0.05);
+          border-radius: 16px;
+          box-shadow: 
+          0 4px 10px rgba(0, 0, 0, 0.2),
+          -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+          5px 18px 28px 0 rgba(34, 33, 81, 0.25);
+          backdrop-filter: blur(2.1px);
+          -webkit-backdrop-filter: blur(2.1px);
+          /* border: 1px solid rgba(0, 0, 0, 0.1); */
+          z-index: 2;
+}
+
+.title h1{ 
+        position: absolute;
+        margin: 0 6vw;
+        opacity: 0.99;
+        /* position: absolute;
+        top: 50%; 
+        right: 50%; */
+        /* transform: translate(50%,-50%); */
+        text-align: center;
+        text-transform: uppercase;
+        font-family: verdana;
+        /* font-size: 9rem; */
+        font-weight: 700;
+        color: var(--third-light);
+        text-shadow: 
+            /* 1px 1px 1px #919191,
+            1px 2px 1px #919191,
+            1px 3px 1px #919191,
+            1px 4px 1px #919191,
+            1px 5px 1px #919191, */
+
+            2px 15px 6px rgba(16,16,16,0.05),
+            4px 20px 10px rgba(16,16,16,0.01),
+            6px 20px 28px rgba(16,16,16,0.01),
+            7px 22px 28px rgba(16,16,16,0.05);
+}
+
+.title.glass h1{ 
+    color: transparent;
+}
+
+.title-container{
+    margin: 0 4rem;
+    width: 50%;
+}
+
+.title{
+    margin: 0;
+    padding: 0;
+}
+
+.title.letter{
+    align-self:center;
+    background-color: transparent;
+    box-shadow: none;
+    top: 110px;
+    z-index: 2;
+}
+
+.title.glass{
+    z-index: 1;
+    top: -110px;
+}
+
+.title.letter h1{
+    -webkit-text-stroke: 1px var(--primary-grey);
+    color: var(--primary-grey);
+    text-shadow: 
+    0px 1px 1px rgba(255, 251, 251, 0.02),
+    0px 2px 1px rgba(255, 251, 251, 0.04),
+    0px 3px 1px rgba(255, 251, 251, 0.06),
+    0px 4px 1px rgba(255, 251, 251, 0.08),
+    0px 4px 1px rgba(255, 251, 251, 0.10),
+    0px 4px 1px rgba(255, 251, 251, 0.12),
+    0px 4px 1px rgba(255, 251, 251, 0.14),
+    0px 1px 1px rgba(145, 145, 145, 0.16),
+    0px 2px 1px rgba(145, 145, 145, 0.18),
+    0px 3px 1px rgba(145, 145, 145, 0.14),
+    0px 4px 1px rgba(145, 145, 145, 0.14),
+    0px 5px 1px rgba(145, 145, 145, 0.12),
+    0px 6px 1px rgba(145, 145, 145, 0.12),
+    0px 7px 1px rgba(145, 145, 145, 0.10),
+    0px 8px 1px rgba(145, 145, 145, 0.1),
+    0px 9px 1px rgba(145, 145, 145, 0.08),
+    0px 10px 1px rgba(145, 145, 145, 0.08),
+    0px 11px 1px rgba(145, 145, 145, 0.06),
+    0px 12px 1px rgba(145, 145, 145, 0.06),
+    0px 13px 1px rgba(145, 145, 145, 0.04),
+    0px 14px 1px rgba(145, 145, 145, 0.04),
+    0px 15px 1px rgba(145, 145, 145, 0.02),
+    0px 16px 1px rgba(145, 145, 145, 0.02),
+    0px 17px 1px rgba(145, 145, 145, 0.01),
+    0px 18px 1px rgba(145, 145, 145, 0.01),
+    0px 19px 1px rgba(145, 145, 145, 0.01),
+    0px 20px 1px rgba(145, 145, 145, 0.01),
+    
+    1px 22px 6px rgba(16,16,16,0.04);
+
+}
+
+.title h1{
+    line-height: 95%;
+    transform:
+    scale(100%,125%)
+    rotateX(40deg)
+    rotateY(5deg)
+    skewX(-3deg)
+    skewY(-5deg)
+    rotateZ(0deg);
+  transform-style: preserve-3d;
+  filter: blur(0.25px);
+}
+
+.title.glass:hover{
+    /* transform:
+      translate3d(0px, -16px, 0px)
+      rotateX(51deg)
+      rotateZ(43deg); */
+      box-shadow: 
+      0 0px 0px rgba(0, 0, 0, 0.2),
+      5px 0 10px 0 rgba(34, 33, 81, 0.01),
+      -5px 1px 10px 0 rgba(34, 33, 81, 0.25),
+      5px 3px 20px 0 rgba(34, 33, 81, 0.25);
+
+}
+
+.title.letter h1:first-child,
+.title.glass h1:first-child{
+    top: 33px;
+} 
+
+.title.letter h1:last-child,
+.title.glass h1:last-child{
+    bottom: 33px;
+    font-size: 4rem;
+} 
